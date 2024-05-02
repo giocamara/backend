@@ -15,9 +15,9 @@ router.post('/post', async (req, res) => {
     catch (error) {
     res.status(400).json({ message: error.message })
     }
-   })
+    })
 
-   router.get('/getAll', async (req, res) => {
+router.get('/getAll', async (req, res) => {
     try {
     const resultados = await modeloTarefa.find();
     res.json(resultados)
@@ -25,9 +25,9 @@ router.post('/post', async (req, res) => {
     catch (error) {
     res.status(500).json({ message: error.message })
     }
-   })
+    })
 
-   router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
     const resultado = await modeloTarefa.findByIdAndDelete(req.params.id)
     res.json(resultado)
@@ -35,9 +35,9 @@ router.post('/post', async (req, res) => {
     catch (error) {
     res.status(400).json({ message: error.message })
     }
-   })
+    })
 
-   router.patch('/update/:id', async (req, res) => {
+router.patch('/update/:id', async (req, res) => {
     try {
     const id = req.params.id;
     const novaTarefa = req.body;
